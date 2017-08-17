@@ -1,0 +1,39 @@
+<h1>Results</h1>
+First is a histogram of sales of each color after being adjusted for the cost of producing each widget, note that the x and y axis change betweent graphs. Below that is an exploration of different possible cases of the sale. The code use to generate all of the graphs can be viewed on github by clicking on the file "Data-Science.ipynb". Also the cases are generated based on the idea that every widget costs 100000 to make. Finally, you can find this file in the Ruby project at widgetsite/app/views/welcome
+
+<h3> Black Widget Histogram </h3>
+<%= image_tag("black.png") %>
+<br><br><br>
+
+<h3> Blue Widget Histogram </h3>
+Notice that there is an outlier ~1.7m. Also notice that blue has the highest number of negative sales
+<%= image_tag("blue.png") %>
+<br><br><br>
+
+<h3> Red Widget Histogram </h3>
+<%= image_tag("red.png") %>
+<br><br><br>
+
+<h3> Case 0: </h3> Reults of sale as is (with sub optimal selling strategy)<br><br>
+<%= image_tag("case0.png") %>
+<br><br><br>
+
+<h3> Case 0.5: </h3> Reults of sale as is (with sub optimal selling strategy), but ignoring the 1.7m blue outlier.<br>
+<%= image_tag("case0.5.png") %>
+<br><br><br>
+
+<h3> Case 1: </h3> Projected results of sale if no widget is sold for less than $100001. Note that profits could be higher for all colors, but more data is needed to accurately predict how much over $1000000 the sub $100000 buyers would be willing to pay. The increase in profits would therefore be proportional to the number of sub $100000 sales. This is true for the rest of the cases <br>
+<%= image_tag("case1.png") %>
+<br><br><br>
+
+<h3> Case 1.5: </h3> Projected results of sale if no widget is sold for less than $100001, but ignoring the 1.7m blue outlier.<br>
+<%= image_tag("case1.5.png") %>
+<br><br><br>
+
+<h3> Case 2: </h3> Projected Results of sale if 'RED' company also produced and sold half of all non red colors, and all widgets are sold for more than $100000. This case has three assumptions. That the company that produces all 'RED' widgets could produce non red widgets, that the non red widgets would be equivalent to competitiors products, and therefore that 'RED' company would sell half of the market for each non red color.<br>
+<%= image_tag("case2.png") %>
+<br><br><br>
+
+<h3> Case 3: </h3> Projected results of sale if 'RED' company also produced and sold half of all non red for more than $100000, and all other companies continued to sell widgets for less than or equal to $100000. This case uses the same assumptions as the last case.<br>
+<%= image_tag("case3.png") %>
+<br><br><br>
