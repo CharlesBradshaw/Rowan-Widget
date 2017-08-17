@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Widgetsite</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="cdOAKStWOvzQiDKsdcL9DxfE1oKjiUvSo4W6joIyRkPjz4U9ip0tDyYbVc+hmo6/MnDp0eeM5QFFwWeq2E02TQ==" />
+
+    <link rel="stylesheet" media="all" href="/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css?body=1" data-turbolinks-track="reload" />
+    <script src="/assets/rails-ujs.self-661556f443fbae7f6cec8f2cd394aa5e8186cb3f96aded9628126d3484eaa71a.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/action_cable.self-be3674a79bb9d13d41d259b2c17fad23aef20946dab3603b9d02374ea795005f.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/application.self-eba3cb53a585a0960ade5a8cb94253892706bb20e3f12097a13463b1f12a4528.js?body=1" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    <h1>Results</h1>
+First is a histogram of sales of each color after being adjusted for the cost of producing each widget, note that the x and y axis change betweent graphs. Below that is an exploration of different possible cases of the sale. The code use to generate all of the graphs can be viewed on github by clicking on the file "Data-Science.ipynb". Also the cases are generated based on the idea that every widget costs 100000 to make. Finally, you can find this file in the Ruby project at widgetsite/app/views/welcome
+
+<h3> Black Widget Histogram </h3>
+<img src="/assets/black-c2b1d6b6b09af69f9e128be1371b4d378b78e1830c698461c2201ae5b128d952.png" alt="Black" />
+<br><br><br>
+
+<h3> Blue Widget Histogram </h3>
+Notice that there is an outlier ~1.7m. Also notice that blue has the highest number of negative sales
+<img src="/assets/blue-439e50ddbbdb4ee9a0c274c243d01f89fddacfdc3331bbfa48d906124abf60a9.png" alt="Blue" />
+<br><br><br>
+
+<h3> Red Widget Histogram </h3>
+<img src="/assets/red-f9862cf3c12010357275261be0a84a82737e9a835919ae4fa6e09e9d26e89cc0.png" alt="Red" />
+<br><br><br>
+
+<h3> Case 0: </h3> Reults of sale as is (with sub optimal selling strategy)<br><br>
+<img src="/assets/case0-920a45d7889c399f60ecf55cddd2ce778d98e6c61feb15e5947cb96ee157414b.png" alt="Case0" />
+<br><br><br>
+
+<h3> Case 0.5: </h3> Reults of sale as is (with sub optimal selling strategy), but ignoring the 1.7m blue outlier.<br>
+<img src="/assets/case0.5-760b536233e7ab2d60b240760fbb27e124e7962f8ca70c4b0dc6e38165c8a801.png" alt="Case0.5" />
+<br><br><br>
+
+<h3> Case 1: </h3> Projected results of sale if no widget is sold for less than $100001. Note that profits could be higher for all colors, but more data is needed to accurately predict how much over $1000000 the sub $100000 buyers would be willing to pay. The increase in profits would therefore be proportional to the number of sub $100000 sales. This is true for the rest of the cases <br>
+<img src="/assets/case1-01fe98fa90f39e662db078533a61d617670c1300f84f57960f0c001a8d478d71.png" alt="Case1" />
+<br><br><br>
+
+<h3> Case 1.5: </h3> Projected results of sale if no widget is sold for less than $100001, but ignoring the 1.7m blue outlier.<br>
+<img src="/assets/case1.5-33cd09c1a765f71dd51c47d0d3fad3a534e9151fd03b802fdad09898ccc8ffc4.png" alt="Case1.5" />
+<br><br><br>
+
+<h3> Case 2: </h3> Projected Results of sale if 'RED' company also produced and sold half of all non red colors, and all widgets are sold for more than $100000. This case has three assumptions. That the company that produces all 'RED' widgets could produce non red widgets, that the non red widgets would be equivalent to competitiors products, and therefore that 'RED' company would sell half of the market for each non red color.<br>
+<img src="/assets/case2-dcd9e505870aa5d478594d28ca28348136243ef8af66a4062a03bcc679ea6423.png" alt="Case2" />
+<br><br><br>
+
+<h3> Case 3: </h3> Projected results of sale if 'RED' company also produced and sold half of all non red for more than $100000, and all other companies continued to sell widgets for less than or equal to $100000. This case uses the same assumptions as the last case.<br>
+<img src="/assets/case3-5f64c97ba20818dc60243dcc7d59e9cd1fdef33f9272dc51d183888c0c00f423.png" alt="Case3" />
+<br><br><br>
+
+  </body>
+</html>
